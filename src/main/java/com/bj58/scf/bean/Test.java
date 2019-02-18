@@ -7,8 +7,6 @@ import com.bj58.jyfz.train.contract.TrainUserService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import java.io.File;
-
 /**
  * @author zhangyining on 19/2/18 018.
  */
@@ -23,12 +21,8 @@ public class Test {
         CourseService courseService = (CourseService) context.getBean("courseService");
         TrainUserService trainUserService = (TrainUserService) context.getBean("trainUserService");
         try {
-            for (int i = 0;i < 10; i++){
-                Course course = courseService.getCourseById(100002L);
-                System.out.println(course);
-                TrainUser trainUser = trainUserService.selectById(11L);
-                System.out.println(trainUser);
-            }
+            courseService.getCourseById(100002L);
+            trainUserService.selectById(11L);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -22,12 +22,7 @@ public class ScfFactoryBean<T> implements FactoryBean {
     /**
      * 接口
      */
-    private Class<?> interfaceClass;
-
-    /**
-     * 实现类
-     */
-    private Class<?> implClass;
+    private Class<T> interfaceClass;
 
     private MapperInvocationHandler handler = new MapperInvocationHandler();
 
@@ -45,7 +40,7 @@ public class ScfFactoryBean<T> implements FactoryBean {
     }
 
     @Override
-    public Class<?> getObjectType() {
+    public Class<T> getObjectType() {
         return interfaceClass;
     }
 

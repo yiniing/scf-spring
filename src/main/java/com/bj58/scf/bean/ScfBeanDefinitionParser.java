@@ -26,7 +26,6 @@ public class ScfBeanDefinitionParser extends AbstractSingleBeanDefinitionParser 
         //get attribute
         String url = element.getAttribute("url");
         String iface = element.getAttribute("interface");
-        String implClass = element.getAttribute("implClass");
         String id = element.getAttribute("id");
 
         //check attribute，id can not be duplicate
@@ -45,15 +44,6 @@ public class ScfBeanDefinitionParser extends AbstractSingleBeanDefinitionParser 
                     builder.addPropertyValue("interfaceClass", clazz);
                 } catch (ClassNotFoundException e) {
                     throw new IllegalArgumentException("interface not found " + iface);
-                }
-            }
-
-            if(StringUtils.hasText(implClass)) {
-                try {
-                    clazz = Class.forName(implClass);
-                    builder.addPropertyValue("implClass", clazz);
-                } catch (ClassNotFoundException var9) {
-                    throw new IllegalArgumentException("implClass not found " + implClass);
                 }
             }
         }
