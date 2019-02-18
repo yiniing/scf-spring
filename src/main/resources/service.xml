@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:scf="http://www.chinahr.com/schema/scf"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+     http://www.chinahr.com/schema/scf http://www.chinahr.com/schema/scf.xsd">
+
+	<scf:service id="courseService" interface="com.bj58.jyfz.train.contract.CourseService"
+				 url="tcp://fortune/CourseServiceImpl"/>
+
+	<scf:service id="trainUserService" interface="com.bj58.jyfz.train.contract.TrainUserService"
+				 url="tcp://fortune/TrainUserServiceImpl"/>
+
+</beans>
