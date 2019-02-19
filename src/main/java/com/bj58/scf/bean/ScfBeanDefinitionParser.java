@@ -19,6 +19,7 @@ public class ScfBeanDefinitionParser extends AbstractSingleBeanDefinitionParser 
 
     /**
      * 重写父类空方法。主要工作是从element中获取自定义元素值，检查并设置到builder中
+     * 也可以实现{@link org.springframework.beans.factory.xml.BeanDefinitionParser}接口，自定义BeanDefinition
      */
     @Override
     protected void doParse(Element element, ParserContext parserContext, BeanDefinitionBuilder builder) {
